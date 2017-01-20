@@ -5,6 +5,19 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>app-jpa-books</name>
+  
+  <dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.40</version>
+</dependency>
+	  
+
+  </dependencies>
+  
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <resources>

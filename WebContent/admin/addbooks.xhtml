@@ -1,0 +1,71 @@
+<ui:composition template="/WEB-INF/views/layout_admin.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+   
+    <ui:define name="body">
+    
+    
+    <div class="container">
+        <div class="text-center">
+            <h2>  Novo Livro </h2>
+        </div>
+    
+    <h:form>
+        <h:messages />
+      
+        <div class="form-group">
+            <h:outputLabel value="Titulo do livro:" for="title" />
+            <h:inputText id="title" value="#{bookBean.book.title}"
+                         pt:placeholder="Titulo do livro:"  styleClass="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <h:outputLabel value="ISBN:" for="isbn" />
+            <h:inputText id="isbn" value="#{bookBean.book.isbn}"
+                         pt:placeholder="ISBN:"  styleClass="form-control"/>
+        </div>
+        
+        
+        <div class="form-group">
+            <h:outputLabel value="Quantidade de Paginas:" for="qtdPages" />
+            <h:inputText pt:type="number" value="#{bookBean.book.numberPages}" 
+                         pt:placeholder="0" pt:min="0" id="qtdPages" styleClass="form-control"/>
+        </div>
+        
+         <div class="form-group">
+            <h:outputLabel value="Preço:" for="preco" />
+            <h:inputText pt:type="number" pt:step="0.1" value="#{bookBean.book.price}" 
+                         pt:placeholder="0" pt:min="0" id="preco" styleClass="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <h:outputLabel for="description" value="Descriçao"/>
+            <h:inputTextarea styleClass="form-control" value="#{bookBean.book.description}"
+                             id="description" rows="8" cols="20" pt:type="textarea" />
+        </div>
+        
+        <div class="form-group">
+           
+                     <h:outputLabel value="E-book" for="ebook" style="margin-left: 10px" />
+                     <h:selectBooleanCheckbox id="ebook"  style="margin-left: 10px"/> 
+             
+                     <h:outputLabel value="Livro Impresso"  for="impresso" style="margin-left: 10px" />
+                     <h:selectBooleanCheckbox id="impresso" 
+                                             style="margin-left: 10px"/>
+           
+        </div>
+        
+        <h:commandButton value="Adicionar" styleClass="btn btn-default" action="#{bookBean.save(bookBean.book)}"/>
+    </h:form>
+        
+    </div>
+        
+        <br/>
+        <br/>
+    </ui:define>
+    
+    
+</ui:composition>
