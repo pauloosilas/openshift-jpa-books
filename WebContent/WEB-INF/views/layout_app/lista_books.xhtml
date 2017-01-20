@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      > 
+    
+    <h:body>
+        <div class="container">
+             <div class="group_book">
+                  <div class="form-group">
+               
+                      <ui:repeat var="book" value="#{produtosBean.produtos}">
+                           <div class="box-aling">
+                          <ul>
+                       
+                           
+                              <li> <h:outputLabel value="#{book.title}" /></li>
+                              <li> <h:graphicImage style="width: 150px ; height: 200px" library="images" name="node.png"  /></li>
+                              <li><h:outputLabel value="#{book.numberPages}" /></li>
+                          </ul>
+                          </div>
+                         
+                      </ui:repeat>
+                    </div>
+            </div>
+        </div>
+    </h:body>
+    
+</html>
